@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Are You Ready?</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lovelyn&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: white;
+      font-family: 'Lovelyn', serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 8s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    img {
+      max-width: 35%;
+      height: auto;
+      margin-bottom: 2rem;
+    }
+
+    .question, .input-container {
+      opacity: 0;
+      animation: fadeInElements 8s ease-in-out forwards;
+      animation-delay: 0s;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    @keyframes fadeInElements {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .question {
+      font-family: 'Lovelyn', serif;
+      font-size: 2.7rem;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+      background: linear-gradient(45deg, #5a0000, #a00000);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 2px 2px 6px rgba(160, 0, 0, 0.8);
+    }
+
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    input {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      font-family: 'Lovelyn', serif;
+      border: 2px solid #7a0000;
+      border-radius: 6px;
+      outline: none;
+      background: linear-gradient(45deg, #4a0000, #7a0000);
+      color: white;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(160, 0, 0, 0.6);
+    }
+
+    input::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+  </style>
+</head>
+<body>
+  <img src="images/katsu.png" alt="Intro" class="fade-in" />
+  <div class="question">Are you ready?</div>
+  <div class="input-container">
+    <input type="text" id="response" placeholder="" />
+  </div>
+
+  <script>
+    document.getElementById('response').addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+        const response = event.target.value.toLowerCase();
+        if (response === 'yes') {
+          // Redireciona para a página main.html
+          window.location.href = 'main.html';
+        } else {
+          alert('Please type "Yes" to continue.');
+        }
+      }
+    });
+  </script>
+</body>
+</html>

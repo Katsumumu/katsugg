@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <!-- Configurações de metadados e links de fontes -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Katsu.gg</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;600&family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'LOVELYN', serif;
+        background: linear-gradient(to bottom, #0b0b0f, #1a0d0d);
+        color: #f5f5f5;
+        font-size: 120%;
+      }
+
+      h2, h3 {
+        font-family: 'LOVELYN', serif;
+      }
+
+      .hover-grow {
+        transition: transform 0.3s ease;
+      }
+
+      .hover-grow:hover {
+        transform: scale(1.05);
+      }
+
+      .icon {
+        margin-right: 10px;
+        width: 20px;
+        height: 20px;
+      }
+
+      .hero-section {
+        padding: 80px 20px;
+        text-align: center;
+        background: linear-gradient(to bottom right, #0b0b0f, #1a0d0d);
+      }
+
+      .hero-title {
+        font-size: 3.5rem;
+        color: #f0f0f0;
+        text-shadow: 0 0 8px rgba(255, 64, 64, 0.4);
+        margin-bottom: 20px;
+      }
+
+      .cta-button {
+        background-color: #8b0000;
+        padding: 15px 30px;
+        color: white;
+        font-size: 1.2rem;
+        border-radius: 30px;
+        text-decoration: none;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+      }
+
+      .cta-button:hover {
+        background-color: #a30000;
+      }
+
+      nav ul li a {
+        font-family: 'LOVELYN', serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 1.1rem;
+      }
+
+      nav ul li a:hover {
+        color: #d40000;
+      }
+
+      .footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #1a0d0d;
+        color: #f0f0f0;
+        font-size: 0.9rem;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="flex flex-col">
+    <!-- Navbar -->
+    <nav class="bg-[#1a0d0d] p-6 flex justify-between items-center shadow-md">
+      <h1 class="text-2xl font-bold text-red-400 tracking-wide">Katsu.gg</h1>
+      <ul class="flex gap-6 text-sm text-white">
+        <li class="flex items-center">
+          <img src="https://img.icons8.com/ios/50/ffffff/home-page.png" class="icon" alt="Início" />
+          <a href="#" class="hover:text-red-400 transition">Início</a>
+        </li>
+        <li class="flex items-center">
+          <img src="https://img.icons8.com/ios/50/ffffff/settings.png" class="icon" alt="Conceitos" />
+          <a href="#" class="hover:text-red-400 transition">Conceitos</a>
+        </li>
+        <li class="flex items-center">
+          <img src="https://img.icons8.com/ios/50/ffffff/brain.png" class="icon" alt="Psicologia" />
+          <a href="#" class="hover:text-red-400 transition">Psicologia</a>
+        </li>
+        <li class="flex items-center">
+          <img src="https://img.icons8.com/ios/50/ffffff/info.png" class="icon" alt="Sobre" />
+          <a href="#" class="hover:text-red-400 transition">Sobre</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <h2 class="hero-title">O jogo é mental, jogue com inteligência.</h2>
+      <p class="text-lg text-gray-200 leading-relaxed max-w-3xl mx-auto">
+        Katsu.gg oferece mais do que apenas estratégias para o LoL. Aqui, você vai conhecer sua mente e aprender a aplicar psicologia com a perseverança de quem nunca desiste. Transforme cada desafio em uma oportunidade de crescimento, melhore a cada erro e evolua como jogador com leveza. Lembre-se de que o verdadeiro valor está em aproveitar o jogo, se divertir e amar o processo — o prazer é apenas uma consequência da sua evolução e do seu amor pelo jogo.
+      </p>
+      <a href="#" class="cta-button mt-8">Comece Agora</a>
+    </section>
+
+    <!-- Dúvidas -->
+    <section class="bg-[#1a0d0d] py-12 px-6">
+      <div class="max-w-3xl mx-auto">
+        <h3 class="text-2xl font-bold text-red-300 mb-4 text-center">Envie Suas Dúvidas</h3>
+        <form class="space-y-4" id="duvidaForm">
+          <input type="text" placeholder="Seu nick e #tag do LoL (ex: Summoner#BR1)" class="w-full p-3 bg-[#2a0d0d] text-white rounded-lg border border-red-400/10 focus:outline-none focus:ring-2 focus:ring-red-400" />
+          <input type="text" placeholder="Seu nick do Discord" class="w-full p-3 bg-[#2a0d0d] text-white rounded-lg border border-red-400/10 focus:outline-none focus:ring-2 focus:ring-red-400" />
+          <textarea placeholder="Digite aqui sua dúvida sobre o jogo..." class="w-full p-4 h-40 bg-[#2a0d0d] text-white rounded-lg border border-red-400/10 focus:outline-none focus:ring-2 focus:ring-red-400"></textarea>
+          
+          <!-- Campo opcional de mídia -->
+          <input type="url" id="linkInput" placeholder="Link de imagem, vídeo ou conteúdo (opcional)" 
+            class="w-full p-3 bg-[#2a0d0d] text-white rounded-lg border border-red-400/10 focus:outline-none focus:ring-2 focus:ring-red-400"
+            pattern="https?://.*" 
+            title="Somente URLs válidas iniciando com http:// ou https://">
+          
+          <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-xl transition shadow-lg w-full">Enviar para Análise</button>
+        </form>
+        
+        <!-- Mensagem de confirmação -->
+        <p id="confirmMessage" class="hidden text-center text-gray-300 mt-4">
+          Agradecemos por enviar sua dúvida! Fique atento, pois a resposta será enviada diretamente para o seu Discord. Para garantir que nossa comunicação seja rápida e eficiente, por favor, aceite o usuário <strong>Katsumu</strong> no Discord.
+        </p>
+      </div>
+    </section>
+
+    <!-- Mensagem Final -->
+    <section class="bg-[#1a0d0d] py-16 px-6 text-center">
+      <div class="max-w-4xl mx-auto">
+        <p class="text-lg text-gray-300 mb-4">
+          Assim como Lelouch em sua jornada, onde estratégia, fúria e inteligência se entrelaçam, nossa missão aqui é ajudá-lo a dominar seu próprio jogo. O verdadeiro poder está na mente de quem tem coragem de encarar a realidade.
+        </p>
+        <p class="text-lg text-gray-300 mb-4">
+          Agradeço especialmente à minha amada esposa, que está sempre ao meu lado, não só como minha parceira, mas como minha melhor amiga. Sua presença constante e apoio incondicional são como Frieren, que, mesmo com o passar dos anos e após tantas batalhas, continua ao lado do herói, com paciência, sabedoria e um carinho silencioso, mas imensurável. Ela, claro, é muito mais incrível e única do que qualquer personagem de anime.
+        </p>
+        <p class="text-lg text-gray-300 mb-4">
+          Curiosidade rápida: Os Trilobitas, uma das criaturas mais antigas da Terra, surgiram há cerca de 520 milhões de anos e existiram por mais de 270 milhões de anos, o que os torna alguns dos primeiros seres complexos a habitar nosso planeta.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      Feito com ♥ para jogadores conscientes — <span class="text-red-400 hover:underline">Katsu.gg</span>
+      <div class="mt-4">
+        <ul class="flex justify-center gap-6 text-sm text-white">
+          <li><a href="/politica-privacidade" class="hover:text-red-400">Política de Privacidade</a></li>
+          <li><a href="/termos-servico" class="hover:text-red-400">Termos de Serviço</a></li>
+          <li><a href="/contato" class="hover:text-red-400">Contato</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- JavaScript de segurança e confirmação -->
+    <script>
+      document.getElementById('duvidaForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Impede o envio do formulário
+
+        const input = document.getElementById('linkInput');
+        const url = input.value.trim();
+        const bloqueados = ["bit.ly", "tinyurl.com", "mediafire.com", "discord.gg", "mega.nz"];
+        
+        if (url && bloqueados.some(domain => url.includes(domain))) {
+          alert("O link informado não é permitido por questões de segurança. Por favor, use um link confiável e direto.");
+        } else {
+          document.getElementById('confirmMessage').classList.remove('hidden');
+        }
+      });
+    </script>
+  </body>
+</html>
