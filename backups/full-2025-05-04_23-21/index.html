@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Katsu.gg</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;600&family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=LOVELYN&display=swap" rel="stylesheet"> <!-- Fonte LOVELYN -->
+    <style>
+      body {
+        font-family: 'LOVELYN', serif;
+        background: linear-gradient(to bottom, #0b0b0f, #1a0d0d);
+        color: #f5f5f5;
+        font-size: 120%;
+        scroll-behavior: smooth; /* Para suavizar o scroll */
+      }
+
+      h2, h3 {
+        font-family: 'LOVELYN', serif;
+      }
+
+      .hover-grow {
+        transition: transform 0.3s ease;
+      }
+
+      .hover-grow:hover {
+        transform: scale(1.05);
+      }
+
+      .icon {
+        margin-right: 10px;
+        width: 20px;
+        height: 20px;
+      }
+
+      .hero-section {
+        padding: 80px 20px;
+        text-align: center;
+        background: linear-gradient(to bottom right, #0b0b0f, #1a0d0d);
+        animation: fadeIn 1s ease-in-out;
+        background-attachment: fixed; /* Efeito parallax */
+      }
+
+      @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+
+      .hero-title {
+        font-size: 3.5rem;
+        color: #f0f0f0;
+        text-shadow: 0 0 8px rgba(255, 64, 64, 0.4);
+        margin-bottom: 20px;
+      }
+
+      .cta-button {
+        background-color: #8b0000;
+        padding: 15px 30px;
+        color: white;
+        font-size: 1.2rem;
+        border-radius: 30px;
+        text-decoration: none;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+      }
+
+      .cta-button:hover {
+        background-color: #a30000;
+      }
+
+      nav ul li a {
+        font-family: 'LOVELYN', serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 1.1rem;
+      }
+
+      nav ul li a:hover {
+        color: #d40000;
+      }
+
+      .footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #1a0d0d;
+        color: #f0f0f0;
+        font-size: 0.9rem;
+        font-family: 'LOVELYN', serif; /* Fonte LOVELYN no footer */
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      /* Botão "Voltar ao topo" */
+      .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #8b0000;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 50%;
+        font-size: 18px;
+        cursor: pointer;
+        display: none; /* Inicialmente oculto */
+        transition: background-color 0.3s;
+      }
+
+      .back-to-top:hover {
+        background-color: #a30000;
+      }
+
+      /* Estilo para o feedback de carregamento */
+      .loading-feedback {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 15px 30px;
+        border-radius: 25px;
+        color: white;
+        font-size: 1.1rem;
+        display: none;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      /* Efeito de parallax */
+      .parallax {
+        background-image: url('sua-imagem-de-fundo.jpg');
+        min-height: 100%;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      /* Estilo da barra de pesquisa */
+      .search-bar {
+        width: 100%;
+        padding: 10px;
+        border-radius: 25px;
+        border: 2px solid #8b0000;
+        margin-bottom: 20px;
+        background-color: #2a0d0d;
+        color: white;
+        font-size: 1.1rem;
+      }
+
+      .search-bar:focus {
+        outline: none;
+        border-color: #d40000;
+        box-shadow: 0 0 10px rgba(212, 0, 0, 0.5);
+      }
+      
+    </style>
+  </head>
+  <body class="flex flex-col">
+    <!-- Navbar -->
+    <nav class="bg-[#1a0d0d] p-6 flex justify-between items-center shadow-md">
+      <h1 class="text-2xl font-bold text-red-400 tracking-wide">Katsu.gg</h1>
+      <ul class="flex gap-6 text-sm text-white">
+        <li class="flex items-center">
+          <img src="https://img.icons8.com/ios/50/ffffff/home-page.png" class="icon" alt="Início" />
+          <a href="main.html" class="hover:text-red-400 transition">Início</a>
+        </li>
+        <li class="flex items-center">
+          <img src="https://img.icons8.com/ios/50/ffffff/settings.png" class="icon" alt="Conceitos" />
+          <a href="concepts.html" class="hover:text-red-400 transition">Conceitos</a>
+        </li>
+        <li class="flex items-center">
+          <img src="https://img.icons8.com/ios/50/ffffff/brain.png" class="icon" alt="Psicologia" />
+          <a href="behavior.html" class="hover:text-red-400 transition">Psicologia</a>
+        </li>
+        <li class="flex items-center">
+          <img src="https://img.icons8.com/ios/50/ffffff/info.png" class="icon" alt="Sobre" />
+          <a href="aboutme.html" class="hover:text-red-400 transition">Sobre</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Barra de Pesquisa -->
+    <div class="max-w-3xl mx-auto mt-10">
+      <input type="text" class="search-bar" placeholder="Pesquise por tópicos, dicas ou estratégias..." id="searchInput" />
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section parallax">
+      <h2 class="hero-title">O jogo é mental, jogue com inteligência.</h2>
+      <p class="text-lg text-gray-200 leading-relaxed max-w-3xl mx-auto">
+        Katsu.gg oferece mais do que apenas estratégias para o LoL. Aqui, você vai conhecer sua mente e aprender a aplicar psicologia com a perseverança de quem nunca desiste. Transforme cada desafio em uma oportunidade de crescimento, melhore a cada erro e evolua como jogador com leveza. Lembre-se de que o verdadeiro valor está em aproveitar o jogo, se divertir e amar o processo — o prazer é apenas uma consequência da sua evolução e do seu amor pelo jogo.
+      </p>
+      <a href="#" class="cta-button mt-8">Comece Agora</a>
+    </section>
+
+    <!-- Dúvidas -->
+    <section class="bg-[#1a0d0d] py-12 px-6">
+      <div class="max-w-3xl mx-auto">
+        <h3 class="text-2xl font-bold text-red-300 mb-4 text-center">Envie Suas Dúvidas</h3>
+        <form class="space-y-4" id="duvidaForm">
+          <input type="text" placeholder="Seu nick e #tag do LoL (ex: Summoner#BR1)" class="w-full p-3 bg-[#2a0d0d] text-white rounded-lg border border-red-400/10 focus:outline-none focus:ring-2 focus:ring-red-400" />
+          <input type="text" placeholder="Seu nick do Discord" class="w-full p-3 bg-[#2a0d0d] text-white rounded-lg border border-red-400/10 focus:outline-none focus:ring-2 focus:ring-red-400" />
+          <textarea placeholder="Digite aqui sua dúvida sobre o jogo..." class="w-full p-4 h-40 bg-[#2a0d0d] text-white rounded-lg border border-red-400/10 focus:outline-none focus:ring-2 focus:ring-red-400"></textarea>
+          
+          <!-- Campo opcional de mídia -->
+          <input type="url" id="linkInput" placeholder="Link de imagem, vídeo ou conteúdo (opcional)" 
+            class="w-full p-3 bg-[#2a0d0d] text-white rounded-lg border border-red-400/10 focus:outline-none focus:ring-2 focus:ring-red-400"
+            pattern="https?://.*" 
+            title="Somente URLs válidas iniciando com http:// ou https://">
+          
+          <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-xl transition shadow-lg w-full">Enviar para Análise</button>
+        </form>
+        
+        <!-- Mensagem de confirmação -->
+        <p id="confirmMessage" class="hidden text-center text-gray-300 mt-4">
+          Agradecemos por enviar sua dúvida! Fique atento, pois a resposta será enviada diretamente para o seu Discord. Para garantir que nossa comunicação seja rápida e eficiente, por favor, aceite o usuário <strong>Katsumu</strong> no Discord.
+        </p>
+      </div>
+    </section>
+
+    <!-- Feedback de carregamento -->
+    <div id="loadingFeedback" class="loading-feedback">Enviando sua dúvida...</div>
+
+    <!-- Mensagem Final -->
+    <section class="bg-[#1a0d0d] py-16 px-6 text-center">
+      <div class="max-w-4xl mx-auto">
+        <p class="text-lg text-gray-300 mb-4">
+          Assim como Lelouch em sua jornada, onde estratégia, fúria e inteligência se entrelaçam, nossa missão aqui é ajudá-lo a dominar seu próprio jogo. O verdadeiro poder está na mente de quem tem coragem de encarar a realidade.
+        </p>
+        <p class="text-lg text-gray-300 mb-4">
+          Agradeço especialmente à minha amada esposa, que está sempre ao meu lado, não só como minha parceira, mas como minha melhor amiga. Sua presença constante e apoio incondicional são como Frieren, que, mesmo com o passar dos anos e após tantas batalhas, continua ao lado do herói, com paciência, sabedoria e um carinho silencioso, mas imensurável. Ela, claro, é muito mais incrível e única do que qualquer personagem de anime.
+        </p>
+        <p class="text-lg text-gray-300 mb-4">
+          Curiosidade rápida: Os Trilobitas, uma das criaturas mais antigas da Terra, surgiram há cerca de 520 milhões de anos e existiram por mais de 270 milhões de anos, o que os torna alguns dos primeiros seres complexos a habitar nosso planeta.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      Feito com ♥ para jogadores conscientes — <span class="text-red-400 hover:underline">Katsu.gg</span>
+      <div class="mt-4">
+        <ul class="flex justify-center gap-6 text-sm text-white">
+          <li><a href="/politica-privacidade" class="hover:text-red-400">Política de Privacidade</a></li>
+          <li><a href="/termos-servico" class="hover:text-red-400">Termos de Serviço</a></li>
+          <li><a href="/contato" class="hover:text-red-400">Contato</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <button class="back-to-top" id="backToTopBtn">↑</button>
+
+    <script>
+      // Função para mostrar o botão de voltar ao topo
+      window.onscroll = function() {
+        const btn = document.getElementById('backToTopBtn');
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+          btn.style.display = 'block';
+        } else {
+          btn.style.display = 'none';
+        }
+      };
+
+      document.getElementById('backToTopBtn').addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Feedback de carregamento
+      const form = document.getElementById('duvidaForm');
+      const loadingFeedback = document.getElementById('loadingFeedback');
+      const confirmMessage = document.getElementById('confirmMessage');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        loadingFeedback.style.display = 'block';
+
+        setTimeout(() => {
+          loadingFeedback.style.display = 'none';
+          confirmMessage.style.display = 'block';
+        }, 2000); // Simulando tempo de envio de dúvida
+      });
+
+      // Verificação de links com preview (para vídeos e imagens)
+      const linkInput = document.getElementById('linkInput');
+      linkInput.addEventListener('input', () => {
+        const url = linkInput.value;
+        if (url.match(/\.(jpeg|jpg|gif|png)$/) != null) {
+          linkInput.setCustomValidity('');
+        } else {
+          linkInput.setCustomValidity('Por favor, insira um link válido para imagem ou vídeo.');
+        }
+      });
+    </script>
+  </body>
+</html>
