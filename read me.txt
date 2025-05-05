@@ -1,0 +1,82 @@
+📜 Histórico de Atualizações (05/05/2025)
+🌐 1. Infraestrutura do Site
+✅ GitHub
+
+Configuração do repositório katsugg.
+
+Sincronização automática com deploy no Netlify.
+
+✅ Netlify
+
+Integração contínua (CI/CD) com o GitHub.
+
+Deploy automático ao detectar pushes na branch main.
+
+✅ Organização do Código
+
+Estrutura de pastas padronizada:
+
+bash
+/katsugg
+├── /src/          # Código-fonte (HTML/CSS/JS)
+├── /public/       # Arquivos estáticos (imagens, fonts)
+├── /backups/      # Backups automáticos
+└── /docs/         # Documentação
+🤖 2. Automações
+✅ Backup Diário
+
+Script PowerShell para gerar backups compactados:
+
+powershell
+Compress-Archive -Path "C:\katsugg\*" -DestinationPath "backups/katsugg-$(Get-Date -Format 'yyyy-MM-dd').zip"
+✅ Deploy Automatizado
+
+Script deploy.bat para Git:
+
+batch
+git add --all
+git commit -m "Auto-deploy %date% %time%"
+git push origin main
+⚙️ 3. Configurações Técnicas
+✅ Ambiente Windows
+
+Permissão para scripts PowerShell:
+
+powershell
+Set-ExecutionPolicy RemoteSigned -Force
+✅ Sistema de Versionamento
+
+Controle de alterações via patches:
+
+markdown
+[PATCH 2025-05-05] Atualizado script de backup
+📌 Próximos Passos
+Adicionar compactação para nuvem (Google Drive/OneDrive).
+
+Implementar log de erros detalhado.
+
+Documentar fluxo completo no README.md.
+
+📄 Template para README.md
+markdown
+## 🚀 Configuração do Projeto  
+
+### 🔗 Links  
+- **Site Online**: [Netlify](https://seulink.netlify.app)  
+- **Repositório**: [GitHub](https://github.com/katsumumu/katsugg)  
+
+### ⚙️ Automações  
+1. **Backup Diário**  
+   - Script: `/scripts/backup.ps1`  
+   - Pasta: `C:\backups_katsugg`  
+
+2. **Deploy Automático**  
+   - Acionado ao fazer `push` para `main`.  
+
+### 📂 Estrutura  
+```bash
+/katsugg  
+├── /src/          # Código principal  
+├── /public/       # Assets estáticos  
+├── /backups/      # Backups em ZIP  
+└── README.md      # Documentação  

@@ -1,206 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Katsu.gg - Sobre</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;600&family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=LOVELYN&display=swap" rel="stylesheet">
-    <style>
-      body {
-        font-family: 'LOVELYN', serif;
-        background: linear-gradient(to bottom, #0b0b0f, #1a0d0d);
-        color: #f5f5f5;
-        font-size: 120%;
-        scroll-behavior: smooth;
-      }
+<head>
+    <!-- METADADOS (mesmo do index) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre | Katsugg</title>
+    <!-- LINKS (CSS/JS do tema principal) -->
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+    <!-- CABEÇALHO IGUAL AO INDEX -->
+    <header class="header">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="sobre.html" class="active">Sobre</a>
+            <!-- Outras páginas -->
+        </nav>
+    </header>
 
-      h2, h3 {
-        font-family: 'LOVELYN', serif;
-      }
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="container">
+        <!-- SEÇÃO "SOBRE MIM" -->
+        <section id="sobre">
+            <h1>Quem é Katsu?</h1>
+            <div class="bio">
+                <img src="public/images/your-photo.jpg" alt="Foto do Katsu" class="profile-pic">
+                <div class="bio-text">
+                    <p>Olá! Sou [Seu Nome], criador deste site. Aqui compartilho [objetivo do site: tutoriais, projetos pessoais, etc.].</p>
+                    <p>Meu foco é [ex: ajudar iniciantes na programação] porque acredito que [sua filosofia].</p>
+                </div>
+            </div>
+        </section>
 
-      .hero-section {
-        padding: 80px 20px;
-        text-align: center;
-        background: linear-gradient(to bottom right, #0b0b0f, #1a0d0d);
-        animation: fadeIn 1s ease-in-out;
-        background-attachment: fixed;
-      }
+        <!-- SEÇÃO "PROPÓSITO DO SITE" -->
+        <section id="proposito">
+            <h2>🌟 Por que este site existe?</h2>
+            <ul>
+                <li>Compartilhar conhecimento de forma acessível</li>
+                <li>Documentar minha jornada na programação</li>
+                <li>Construir uma comunidade criativa</li>
+                <!-- Adicione seus pontos -->
+            </ul>
+        </section>
 
-      @keyframes fadeIn {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
-      }
+        <!-- SEÇÃO "FEEDBACK" -->
+        <section id="feedback">
+            <h2>💡 Sugestões?</h2>
+            <p>Quero melhorar este site para você! Envie suas ideias:</p>
+            <form id="form-feedback">
+                <input type="text" name="nome" placeholder="Seu nome (opcional)">
+                <textarea name="sugestao" placeholder="O que podemos melhorar?"></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
 
-      .hero-title {
-        font-size: 3rem;
-        color: #f0f0f0;
-        text-shadow: 0 0 8px rgba(255, 64, 64, 0.4);
-        margin-bottom: 20px;
-      }
-
-      .cta-button {
-        background-color: #8b0000;
-        padding: 15px 30px;
-        color: white;
-        font-size: 1.1rem;
-        border-radius: 30px;
-        text-decoration: none;
-        display: inline-block;
-        transition: background-color 0.3s ease;
-      }
-
-      .cta-button:hover {
-        background-color: #a30000;
-      }
-
-      .footer {
-        text-align: center;
-        padding: 20px;
-        background-color: #1a0d0d;
-        color: #f0f0f0;
-        font-size: 0.9rem;
-        font-family: 'LOVELYN', serif;
-      }
-
-      /* Estilo da barra de pesquisa */
-      .search-bar {
-        width: 100%;
-        padding: 10px;
-        border-radius: 25px;
-        border: 2px solid #8b0000;
-        margin-bottom: 20px;
-        background-color: #2a0d0d;
-        color: white;
-        font-size: 1.1rem;
-      }
-
-      .search-bar:focus {
-        outline: none;
-        border-color: #d40000;
-        box-shadow: 0 0 10px rgba(212, 0, 0, 0.5);
-      }
-
-      /* Estilo para seções específicas */
-      .section-title {
-        font-size: 2rem;
-        margin-bottom: 20px;
-      }
-
-      .section-content {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
-      }
-
-      /* Ajuste nos ícones para tamanho e harmonia */
-      .icon {
-        width: 20px;
-        height: 20px;
-        margin-right: 8px;
-      }
-
-      /* Ajuste na navbar e textos */
-      nav ul li a {
-        font-size: 1rem; /* Tamanho de fonte da navbar */
-      }
-
-      h3.section-title {
-        font-size: 2rem;
-        margin-bottom: 20px;
-      }
-    </style>
-  </head>
-  <body class="flex flex-col">
-    <!-- Navbar -->
-    <nav class="bg-[#1a0d0d] p-6 flex justify-between items-center shadow-md">
-      <h1 class="text-2xl font-bold text-red-400 tracking-wide">Katsu.gg</h1>
-      <ul class="flex gap-6 text-sm text-white">
-        <li class="flex items-center">
-          <img src="https://img.icons8.com/ios/50/ffffff/home-page.png" class="icon" alt="Início" />
-          <a href="#" class="hover:text-red-400 transition">Início</a>
-        </li>
-        <li class="flex items-center">
-          <img src="https://img.icons8.com/ios/50/ffffff/settings.png" class="icon" alt="Conceitos" />
-          <a href="#" class="hover:text-red-400 transition">Conceitos</a>
-        </li>
-        <li class="flex items-center">
-          <img src="https://img.icons8.com/ios/50/ffffff/brain.png" class="icon" alt="Psicologia" />
-          <a href="#" class="hover:text-red-400 transition">Psicologia</a>
-        </li>
-        <li class="flex items-center">
-          <img src="https://img.icons8.com/ios/50/ffffff/info.png" class="icon" alt="Sobre" />
-          <a href="#" class="hover:text-red-400 transition">Sobre</a>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <h2 class="hero-title">Sobre o Katsu.gg</h2>
-      <p class="text-lg text-gray-200 leading-relaxed max-w-3xl mx-auto">
-        Katsu.gg é um site criado com a missão de ajudar jogadores a evoluir não apenas no jogo, mas também em sua mentalidade. Nosso foco é aplicar estratégias baseadas em psicologia para que você possa alcançar o sucesso, não só no jogo, mas na vida também. Aqui, cada erro é uma oportunidade de aprendizado.
-      </p>
-    </section>
-
-    <!-- Seção Quem Sou -->
-    <section class="bg-[#1a0d0d] py-12 px-6">
-      <h3 class="section-title text-center text-red-300">Quem Sou Eu</h3>
-      <p class="section-content max-w-3xl mx-auto">
-        Sou um entusiasta de jogos e psicologia, e criei o Katsu.gg para unir essas duas paixões. Acredito que a mente é a chave para o sucesso em qualquer jogo, e meu objetivo é ajudar outros jogadores a evoluírem tanto dentro como fora dos jogos. Ao longo da minha jornada, aprendi que o verdadeiro poder está na perseverança e no equilíbrio mental.
-      </p>
-    </section>
-
-    <!-- Seção Propósito -->
-    <section class="bg-[#1a0d0d] py-12 px-6">
-      <h3 class="section-title text-center text-red-300">O Propósito do Katsu.gg</h3>
-      <p class="section-content max-w-3xl mx-auto">
-        O Katsu.gg não é apenas um site sobre jogos, mas uma plataforma dedicada ao desenvolvimento pessoal. Nosso objetivo é ajudar jogadores a melhorar sua mentalidade, entender a psicologia por trás das jogadas e alcançar uma evolução contínua, tanto no jogo quanto na vida.
-      </p>
-    </section>
-
-    <!-- Seção Reportar Bugs -->
-    <section class="bg-[#1a0d0d] py-12 px-6">
-      <h3 class="section-title text-center text-red-300">Reportar Bugs</h3>
-      <p class="section-content max-w-3xl mx-auto">
-        Encontrou algum erro no site? Não se preocupe, estamos sempre trabalhando para melhorar. Se você encontrou algum bug ou falha, por favor, entre em contato conosco pelo e-mail abaixo para reportar o problema. Sua colaboração é essencial para a evolução do site!
-      </p>
-      <p class="text-center">
-        <a href="mailto:suporte@katsu.gg" class="cta-button mt-4">Reportar Bug</a>
-      </p>
-    </section>
-
-    <!-- Seção Parceiros -->
-    <section class="bg-[#1a0d0d] py-12 px-6">
-      <h3 class="section-title text-center text-red-300">Nossos Parceiros</h3>
-      <p class="section-content max-w-3xl mx-auto">
-        O Katsu.gg conta com parceiros que compartilham nossa visão de evolução mental e no jogo. Se você gostaria de se tornar parceiro ou saber mais sobre nossas parcerias, entre em contato através do e-mail.
-      </p>
-    </section>
-
-    <!-- Seção Contato -->
-    <section class="bg-[#1a0d0d] py-12 px-6">
-      <h3 class="section-title text-center text-red-300">Contato</h3>
-      <p class="section-content max-w-3xl mx-auto">
-        Para entrar em contato conosco, seja para dúvidas, sugestões ou parcerias, envie um e-mail para: <strong>contato@katsu.gg</strong>. Estamos sempre abertos a novas ideias e formas de melhorar.
-      </p>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-      Feito com ♥ para jogadores conscientes — <span class="text-red-400 hover:underline">Katsu.gg</span>
-      <div class="mt-4">
-        <ul class="flex justify-center gap-6 text-sm text-white">
-          <li><a href="https://twitter.com/katsu_gg" class="hover:text-red-400"><img src="https://img.icons8.com/ios/50/ffffff/twitter.png" class="icon" alt="Twitter" /> Twitter</a></li>
-          <li><a href="https://www.youtube.com/channel/UCXXXXX" class="hover:text-red-400"><img src="https://img.icons8.com/ios/50/ffffff/youtube-play.png" class="icon" alt="YouTube" /> YouTube</a></li>
-          <li><a href="https://www.twitch.tv/katsu_gg" class="hover:text-red-400"><img src="https://img.icons8.com/ios/50/ffffff/twitch.png" class="icon" alt="Twitch" /> Twitch</a></li>
-          <li><a href="/politica-privacidade" class="hover:text-red-400">Política de Privacidade</a></li>
-          <li><a href="/termos-servico" class="hover:text-red-400">Termos de Serviço</a></li>
-          <li><a href="/contato" class="hover:text-red-400">Contato</a></li>
-        </ul>
-      </div>
+    <!-- RODAPÉ IGUAL AO INDEX -->
+    <footer>
+        <p>© 2025 Katsugg. Todos os direitos reservados.</p>
     </footer>
-  </body>
+
+    <!-- SCRIPTS -->
+    <script src="src/js/sobre.js"></script>
+</body>
 </html>
